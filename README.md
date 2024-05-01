@@ -1,5 +1,4 @@
 
-![alt text]([http://url/to/img.png](https://prnt.sc/L94jvAA2ruyO))
 
 
 # React + TypeScript + Vite
