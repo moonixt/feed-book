@@ -44,3 +44,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.form{
+  font-size: xx-large;
+  color: black;
+  background-color: white;
+  border: solid black;
+}

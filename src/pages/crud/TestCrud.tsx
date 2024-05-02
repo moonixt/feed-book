@@ -10,6 +10,11 @@ const TestCrud = () => {
     NavigateBack("/");
   };
 
+  const NavigateFoward = useNavigate();
+  const Forward = () => {
+    NavigateFoward("/");
+  };
+
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
@@ -26,13 +31,16 @@ const TestCrud = () => {
   return (
     <div className="space-y-5">
       <div className="space-y-5">
-        <h1>Teste de Leitura de API Imeal</h1>
+        <h1>Teste de Leitura de API</h1>
+        <div className="flex justify-center space-x-3">
         <button onClick={Back}>Voltar</button>
+        <button onClick={Forward}>Próxima</button>
+        </div>
       </div>
 
-      <div id="CRUD">
+      <div id="CRUD" className="space-y-5">
         {produtos.map((produto) => (
-          <div key={produto.id}>
+          <div key={produto.id} className="space-y-3">
             <h1 className="font-bold">{produto.nome_produto}</h1>
             <h2 className="text-emerald-600"> Preço: R$ {produto.valor}</h2>
             <p>Restaurante: {produto.nome_restaurante}</p>

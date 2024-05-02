@@ -8,10 +8,16 @@ import videofile2 from "../assets/change.mp4";
 function HomePage() {
   // const [count, setCount] = useState(0)
 
-  const navegar = useNavigate();
+  const NavigateBack = useNavigate();
 
-  const redirecionar = () => {
-    navegar("/test");
+  const Back = () => {
+    NavigateBack("/project");
+  };
+
+  const NavigateFoward = useNavigate();
+
+  const Foward = () => {
+    NavigateFoward("/test");
   };
 
   return (
@@ -19,7 +25,10 @@ function HomePage() {
       <div className="space-y-5">
         <h1 className="text-cyan-500">Projeto</h1>
         <h2 className="text-3xl">Pratica de REACT + Electron</h2>
-        <button onClick={redirecionar}>Próxima página</button>
+        <div className="space-x-3">
+        <button onClick={Back}>Anterior</button>
+        <button onClick={Foward}>Próxima</button>
+        </div>
       </div>
       <div>
         <h1 className="pt-10">Deftones</h1>
