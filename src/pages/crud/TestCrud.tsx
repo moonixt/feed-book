@@ -33,8 +33,8 @@ const TestCrud = () => {
       <div className="space-y-5">
         <h1>Teste de Leitura de API</h1>
         <div className="flex justify-center space-x-3">
-        <button onClick={Back}>Voltar</button>
-        <button onClick={Forward}>Próxima</button>
+        <button className="bcolor" onClick={Back}>Voltar</button>
+        <button className="bcolor" onClick={Forward}>Próxima</button>
         </div>
       </div>
 

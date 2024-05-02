@@ -21,13 +21,13 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <div className="page">
       <div className="space-y-5">
         <h1 className="text-cyan-500">Projeto</h1>
         <h2 className="text-3xl">Pratica de REACT + Electron</h2>
         <div className="space-x-3">
-        <button onClick={Back}>Anterior</button>
-        <button onClick={Foward}>Próxima</button>
+        <button className="bcolor"onClick={Back}>Anterior</button>
+        <button className='bcolor'onClick={Foward}>Próxima</button>
         </div>
       </div>
       <div>
@@ -51,7 +51,7 @@ function HomePage() {
             </p>
             <div className="card-actions justify-end">
               <button
-                className=""
+                className="bcolor"
                 onClick={() =>
                   document.getElementById("my_modal_1").showModal()
                 }
@@ -98,7 +98,7 @@ function HomePage() {
             </p>
             <div className="card-actions justify-end">
               <button
-                className=""
+                className="bcolor"
                 onClick={() =>
                   document.getElementById("my_modal_2").showModal()
                 }

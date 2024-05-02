@@ -45,9 +45,52 @@
   color: #888;
 }
 
+.page{
+  border: solid black;
+  padding: 100px 200px 100px 200px;
+  background-color: #0d1117;
+}
+
 .form{
   font-size: xx-large;
-  color: black;
-  background-color: white;
+  color: #848d97;
+  background-color: #0d1117;
+  border: solid #5f666f;
+  border-radius: 5px;
+}
+
+.cover{
   border: solid black;
+  padding: 50px 50px 50px 50px;
+  background-color: #0d1117;
+  border-radius: 50px;
+}
+
+.bcolor{
+  background-color: #1f6feb;
+  color: #f2f6fe;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  transition: all .20s ease-in-out;
+}
+
+.bcolor:hover{
+  padding: 15px 15px 15px 15px;
+  
+
+
+}
+
+
+.img{
+  position: relative;
+  top: 0;
+  transition: all .20s ease-in-out;
+}
+
+.img:hover{
+  padding: 5px 5px 10px 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  border-radius: 20px;
+  top: -15px;
 }

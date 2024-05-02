@@ -60,21 +60,23 @@ const Post = () => {
 
   const NavigateBack = useNavigate()
   const Back = () => {
-    NavigateBack("/")
+    NavigateBack("/project")
   }
 
   return (
     <div>
       <div className='pb-5'>
-        <button onClick={Back}>
+        <button className='bcolor' onClick={Back}>
           Voltar
         </button>
       </div>
       <div id='Post'>
         <div>
-        <form className='form-group' onSubmit={handleSubmit} >
+        <form className='space-y-5 cover' onSubmit={handleSubmit} >
 
-<label className="flex items-center mb-4">
+
+<label className="flex  items-center mb-4">
+  
     <img src={capa}/>
     <input
       type="file"
@@ -93,7 +95,7 @@ const Post = () => {
   <input
    id="outlined-basic"
    className="form"
-   placeholder='Insira o Nome do Album'
+   placeholder='Titulo do Post'
    value={nome}
    name="nome"
    onChange={(e) => setNome(e.target.value)}
@@ -108,7 +110,7 @@ const Post = () => {
     <input
     id="outlined-basic"
       type="text"
-      placeholder='Artista'
+      placeholder='Subtitulo'
       className="form"
       name="artista"
       value={artista} 
@@ -135,7 +137,7 @@ const Post = () => {
     <input
       type="textarea"
       className="form"
-      placeholder="Insira o tipo"
+      placeholder="Categoria"
       name="tipo"
       value={tipo}
       onChange={(e) => setTipo(e.target.value)}
@@ -143,7 +145,7 @@ const Post = () => {
     />
   </label>
   <input
-    className="btn"
+    className="bcolor"
     type="submit"
     value="Postar"
   />
