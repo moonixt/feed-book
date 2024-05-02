@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Implemetation = () => {
@@ -26,6 +26,8 @@ const Implemetation = () => {
   const Foward = () => {
     NavigateFoward("/");
   };
+
+  
 
   return (
     <div className="page">
@@ -55,7 +57,7 @@ const Implemetation = () => {
             </p>
             <p className="justify-left flex">{album.ano}</p>
                 <div className="card-actions justify-end">
-                  <button className="bcolor">Visualizar</button>
+                  <Link to={`/post-details/${album.id}`}><button className="bcolor">Visualizar</button></Link>
                 </div>
               </div>
             </div>
