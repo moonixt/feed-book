@@ -8,6 +8,9 @@
   padding: 2rem;
   text-align: center;
 }
+/* body{
+  background-color: #1c1c1c;
+} */
 
 .logo {
   height: 6em;
@@ -47,8 +50,26 @@
 
 .page{
   border: solid black;
+  border-radius: 15px;
   padding: 100px 200px 100px 200px;
-  background-color: #0d1117;
+  background-color: #151515;
+ 
+}
+
+.sidecolor{
+  background-color: #151515;
+  color: white;
+  
+}
+
+.sidehover:hover{
+  border-radius: 5px;
+  background-color: #1f6feb;
+  padding: 15px 0px 15px 0px;
+
+  transition: all .20s ease-in-out;
+
+
 }
 
 .form{
@@ -93,4 +114,10 @@
   box-shadow: 0 2px 8px rgba(0,0,0,.12);
   border-radius: 20px;
   top: -15px;
+}
+
+.titlecolor{
+  display:flex;
+  justify-content: center;
+  background-color: #1f6feb;
 }

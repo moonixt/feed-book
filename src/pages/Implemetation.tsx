@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Button } from "@material-tailwind/react";
+
+
 
 const Implemetation = () => {
   const NavigatePost = useNavigate()
@@ -28,24 +29,28 @@ const Implemetation = () => {
     NavigateFoward("/");
   };
 
-  
 
   return (
-    <div className="page">
-      <div>
-        <button className="bcolor" onClick={Foward}>Próxima</button>
-      </div>
-      <div className="pt-3">
-        <button className="bcolor" onClick={Post}>Postar</button>
-      </div>
-      <div className="pt-5">
-        <h1 className="font-bold text-8xl bcolor">Feed</h1>
+    <div>
+      <div id="Teste Sidebar">
+     
+        
 
       </div>
-      <div id="Leitura">
+      
+      <div className="pt-5">
+        <h1 className="font-bold text-8xl ">Feed</h1>
+      </div>
+      <div className="pt-10">
+        <button className="bcolor" onClick={Foward}>Próxima</button>
+      </div>
+      <div className="pt-3 pb-5">
+        <button className="bcolor" onClick={Post}>Postar</button>
+      </div>
+      <div id="Leitura" className="page">
       {[...publications].reverse().map((publication) => (
-          <div key={publication.id} className="space-y-3 ">
-            <h1 className="pt-10 pb-5">{publication.title}</h1>
+          <div key={publication.id} className="space-y-3 pt-10 ">
+            <h1 className="pt-10 pb-5 text-white font-bold">{publication.title}</h1>
             <div className="card lg:card-side bg-black shadow-xl">
               <figure>
               <img className='pb-2 rounded-2xl img' src={publication.artwork} alt={publication.title} style={{width: '400px', height: '350px',}} />
