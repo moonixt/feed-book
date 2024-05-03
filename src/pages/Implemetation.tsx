@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Button } from "@material-tailwind/react";
 
 const Implemetation = () => {
   const NavigatePost = useNavigate()
   const Post = () =>{
     NavigatePost('/post')
   }
-  const [albums, setAlbums] = useState([]);
+  const [publications, setPublication] = useState([]);
 
   useEffect(() => {
-    const fetchAlbums = async () => {
+    const fetchPublication = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/albums/");
-        setAlbums(response.data);
+        const response = await axios.get("http://127.0.0.1:8000/publication/");
+        setPublication(response.data);
         console.log(response);
       } catch (error) {
         console.error("Server may not connected:", error);
       }
     };
-    fetchAlbums();
+    fetchPublication();
   }, []);
 
   const NavigateFoward = useNavigate();
@@ -39,25 +40,26 @@ const Implemetation = () => {
       </div>
       <div className="pt-5">
         <h1 className="font-bold text-8xl bcolor">Feed</h1>
+
       </div>
       <div id="Leitura">
-      {[...albums].reverse().map((album) => (
-          <div key={album.id} className="space-y-3 ">
-            <h1 className="pt-10 pb-5">{album.artista}</h1>
+      {[...publications].reverse().map((publication) => (
+          <div key={publication.id} className="space-y-3 ">
+            <h1 className="pt-10 pb-5">{publication.title}</h1>
             <div className="card lg:card-side bg-black shadow-xl">
               <figure>
-              <img className='pb-2 rounded-2xl img' src={album.capa} alt={album.nome} style={{width: '400px', height: '350px',}} />
+              <img className='pb-2 rounded-2xl img' src={publication.artwork} alt={publication.title} style={{width: '400px', height: '350px',}} />
               </figure>
               <div className="card-body">
-                <h1 className="card-title text-5xl pb-10">{album.nome}</h1>
+                <h1 className="card-title text-5xl pb-10">{publication.subtitle}</h1>
                 <h2 className="justify-left flex text-xl">Novo conteudo lançado!</h2>
                 <span className="loading loading-bars loading-md"></span>
                 <p className="justify-left flex text-1xl">
               Clique no botão para ser redirecionado.
             </p>
-            <p className="justify-left flex">{album.ano}</p>
+            <p className="justify-left flex">{publication.publication_date}</p>
                 <div className="card-actions justify-end">
-                  <Link to={`/post-details/${album.id}`}><button className="bcolor">Visualizar</button></Link>
+                  <Link to={`/post-details/${publication.id}`}><button className="bcolor">Visualizar</button></Link>
                 </div>
               </div>
             </div>

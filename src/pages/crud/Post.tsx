@@ -6,11 +6,11 @@ import { useNavigate } from 'react-router-dom'
 const Post = () => {
 
 
-  const [capa, setCapa] = useState(null)
-  const [nome, setNome] = useState("")
-  const [artista, setArtista] = useState("")
-  const [ano, setAno] = useState("")
-  const [tipo, setTipo] = useState("")
+  const [artwork, setArtwork] = useState(null)
+  const [title, setTitle] = useState("")
+  const [subtitle, setSubtitle] = useState("")
+  const [publication_date, setpublication_date] = useState("")
+  const [category, setCategory] = useState("")
 
 
   const handleSubmit = async (event) => {
@@ -19,39 +19,39 @@ const Post = () => {
     let formfield = new FormData();
   
    
-    formfield.append('capa', capa);
+    formfield.append('artwork', artwork);
     
   
-    if (nome === "") {
-      alert('Adicione um nome');
+    if (title === "") {
+      alert('Adicione um title');
       return;
     } else {
-      formfield.append('nome', nome);
+      formfield.append('title', title);
     }
   
-    if (artista === "") {
-      alert('Adicione o nome do artista');
+    if (subtitle === "") {
+      alert('Adicione o title do subtitle');
       return;
     } else {
-      formfield.append('artista', artista);
+      formfield.append('subtitle', subtitle);
     }
   
-    if (ano === "") {
-      alert('Adicione o ano');
+    if (publication_date === "") {
+      alert('Adicione o publication_date');
       return;
     } else {
-      formfield.append('ano', ano);
+      formfield.append('publication_date', publication_date);
     }
   
-    if (tipo === "") {
+    if (category === "") {
       alert('Adicione uma categoria ao produto');
       return;
     } else {
-      formfield.append('tipo', tipo);
+      formfield.append('category', category);
     }
   
     try {
-      await axios.post('http://127.0.0.1:8000/albums/', formfield);
+      await axios.post('http://127.0.0.1:8000/publication/', formfield);
       alert('Registrado');
     } catch (error) {
       alert('Preencha os campos obrigatórios', error);
@@ -77,12 +77,12 @@ const Post = () => {
 
 <label className="flex  items-center mb-4">
   
-    <img src={capa}/>
+    <img src={artwork}/>
     <input
       type="file"
       className=""
-      name="capa"
-      onChange={(e) => setCapa(e.target.files[0])}
+      name="artwork"
+      onChange={(e) => setArtwork(e.target.files[0])}
       
       
     />
@@ -96,9 +96,9 @@ const Post = () => {
    id="outlined-basic"
    className="form"
    placeholder='Titulo do Post'
-   value={nome}
-   name="nome"
-   onChange={(e) => setNome(e.target.value)}
+   value={title}
+   name="title"
+   onChange={(e) => setTitle(e.target.value)}
    
    />
    
@@ -112,9 +112,9 @@ const Post = () => {
       type="text"
       placeholder='Subtitulo'
       className="form"
-      name="artista"
-      value={artista} 
-      onChange={(e) => setArtista(e.target.value)}
+      name="subtitle"
+      value={subtitle} 
+      onChange={(e) => setSubtitle(e.target.value)}
     />
    
   </label>
@@ -126,9 +126,9 @@ const Post = () => {
     id='outlined-basic'
       type="date"
       className="form"
-      name="ano"
-      value={ano}
-      onChange={(e) => setAno(e.target.value)}
+      name="publication_date"
+      value={publication_date}
+      onChange={(e) => setpublication_date(e.target.value)}
       
     />
   </label>
@@ -138,9 +138,9 @@ const Post = () => {
       type="textarea"
       className="form"
       placeholder="Categoria"
-      name="tipo"
-      value={tipo}
-      onChange={(e) => setTipo(e.target.value)}
+      name="category"
+      value={category}
+      onChange={(e) => setCategory(e.target.value)}
       
     />
   </label>
