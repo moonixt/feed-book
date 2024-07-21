@@ -21,7 +21,7 @@ function HomePage() {
   };
 
   return (
-    <div className="page">
+    <div className="page pt-10">
       <div className="space-y-5">
         <h1 className="text-cyan-500">Projeto</h1>
         <h2 className="text-3xl">Pratica de REACT + Electron</h2>

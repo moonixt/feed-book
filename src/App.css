@@ -49,11 +49,14 @@
 }
 
 .page{
-  border: solid black;
-  border-radius: 15px;
-  padding: 100px 200px 100px 200px;
-  background-color: #151515;
+  padding: 100px -800px 100px 200px;
+  /* background-color: #151515;
+  background-size: cover; */
  
+}
+
+.pub {
+  background-color: #151515;
 }
 
 .sidecolor{
@@ -88,12 +91,20 @@
 }
 
 .bcolor{
-  background-color: #1f6feb;
   color: #f2f6fe;
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
   transition: all .20s ease-in-out;
 }
+
+
+/* .bcolortitle{
+  background-color: #122dc781;
+  color: #f2f6fe;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  transition: all .20s ease-in-out;
+} */
 
 .bcolor:hover{
   padding: 15px 15px 15px 15px;
