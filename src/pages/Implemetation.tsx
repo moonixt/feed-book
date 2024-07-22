@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { CiHeart } from "react-icons/ci";
+import { LiaCommentSolid } from "react-icons/lia";
 
 
 
@@ -50,21 +52,27 @@ const Implemetation = () => {
       <div id="Leitura" className="page">
       {[...publications].reverse().map((publication) => (
           <div key={publication.id} className="space-y-3 pt-10 ">
-            <h1 className="pt-10 pb-5 text-white font-bold">{publication.title}</h1>
+           
             <div className="card pub shadow-xl ">
+            <p className="pt-5 pb-3 text-white text-start	text-3xl">{publication.text}</p>
               <figure>
-              <img className='pb-2 rounded-2xl img' src={publication.artwork} alt={publication.title}  />
+              <img className='pb-2 rounded-2xl img justify-start' src={publication.artwork} alt={publication.title}  />
               </figure>
               <div className="card-body">
-                <h1 className="card-title text-5xl pb-10">{publication.subtitle}</h1>
+                {/* <h1 className="card-title text-5xl pb-10">{publication.subtitle}</h1>
                 <h2 className="justify-left flex text-xl"></h2>
                 <span className="loading loading-bars loading-md"></span>
                 <p className="justify-left flex text-1xl">
               Clique no botão para ser redirecionado.
-            </p>
-            <p className="justify-left flex">{publication.publication_date}</p>
+            </p> */}
+            <p className="justify-end flex">{publication.publication_date}</p>
+            <div className="justify-start flex space-x-10">
+              <h1 className="bcolor_react"><CiHeart /></h1>
+             <Link to={`/post-details/${publication.id}`}><h1 className="bcolor_react"><LiaCommentSolid /></h1></Link>
+              
+              </div>
                 <div className="card-actions justify-end">
-                  <Link to={`/post-details/${publication.id}`}><button className="bcolor">Visualizar</button></Link>
+                  
                 </div>
               </div>
             </div>

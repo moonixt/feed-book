@@ -8,6 +8,7 @@ const PostDetails = () => {
 
 
     const [publication, setPublication] = useState([])
+    const [comment, setComment] = useState([])
 
     useEffect(() => {
         const fetchProdutos = async () => {
@@ -22,6 +23,24 @@ const PostDetails = () => {
         fetchProdutos()
       }, [])
     
+      useEffect(() => {
+        const fetchComments = async () => {
+          try {
+            const response = await axios.get(`http://127.0.0.1:8000/comments-post/${id}/`)
+            setComment(response.data)
+          } catch (error) {
+            console.error("Erro ao buscar produtos:", error);
+          }
+        }
+        fetchComments()
+      }, [])
+
+
+
+
+
+
+
       const NavigateBack = useNavigate()
       const Back = () => {
         NavigateBack("/project")
@@ -29,23 +48,39 @@ const PostDetails = () => {
 
   return (
     <div>
-        <div>
-            <button className='bcolor' onClick={Back}>Voltar</button>
-        </div>
+       
       <div id='Detalhes'>
       {publication.map((publication) => (
         <div key={publication.id} className='alinhameshadow-xl pt-10 gap-4'>
-          <h1 className='text-4xl pb-10 font-bold'>{publication.title}</h1>
-          <img className='pb-4' src={`http://127.0.0.1:8000/${publication.artwork}`} alt={publication.title} style={{width: '400px', height: '350px',}} />
-
-          <h2 >{publication.subtitle}</h2>
-          
-
+           <div>
+            <button className='bcolor' onClick={Back}>Voltar</button>
         </div>
+          <h1 className='text-4xl pb-10 '>{publication.text}</h1>
+          <img className='pb-4' src={`http://127.0.0.1:8000/${publication.artwork}`} alt={publication.title} style={{ display: 'block', margin: '0 auto' }} />
+         
+         
+       
+       
+        </div> 
       ))}
+
+       <div className='flex justify-start'>
+            <h1>Chat</h1>
+          </div>
+          <div id='Comentarios'>
+            
+      {comment.map((comment) => (
+        <div key={comment.id} className='pt-10 gap-4'>
+          <h1 className='text-4xl pb-10 '>{comment.comment_text}</h1>
+          {/* <img className='pb-4' src={`http://127.0.0.1:8000/${comment.comment_artwork}`} style={{ display: 'block', margin: '0 auto' }} /> */}
+       
+        </div> 
+      ))}
+
         
 
       </div>
+    </div>
     </div>
   )
 }
