@@ -71,7 +71,7 @@ const PostDetails = () => {
             
       {comment.map((comment) => (
         <div key={comment.id} className='pt-10 gap-4'>
-          <h1 className='text-4xl pb-10 '>{comment.comment_text}</h1>
+          <h1 className='text-4xl pb-10  bcomment'>{comment.comment_text}</h1>
           {/* <img className='pb-4' src={`http://127.0.0.1:8000/${comment.comment_artwork}`} style={{ display: 'block', margin: '0 auto' }} /> */}
        
         </div> 

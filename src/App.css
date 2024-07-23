@@ -97,6 +97,8 @@
   transition: all .20s ease-in-out;
 }
 
+
+
 .bcolor_react{
   color: #f2f6fe;
   background-color: #000000d6;
@@ -105,7 +107,13 @@
   transition: all .20s ease-in-out;
 }
 
-
+.bcomment{
+  background-color: #a2512f;
+  color: #f2f6fe;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  transition: all .20s ease-in-out;
+}
 
 /* .bcolortitle{
   background-color: #122dc781;
