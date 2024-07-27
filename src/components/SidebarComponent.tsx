@@ -38,6 +38,10 @@ import {
     NavigateHome('/test')
   }
 
+  const Publish = () => {
+    NavigateHome('/post')
+  }
+
  
    
 
@@ -60,44 +64,18 @@ import {
         <div>
         <h1 className='text-white sidehover font-bold' onClick={Tests}>Teste API</h1>
         </div>
+        <div>
+        <h1 className='text-white sidehover font-bold' onClick={Publish}>Publicar</h1>
         </div>
-      </div>
-      {/* <List>
-        <ListItem>
-          <ListItemPrefix>
-          </ListItemPrefix>
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-          </ListItemPrefix>
+        <div>
           
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-          </ListItemPrefix>
-          
+        </div>
+        </div>
         
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <UserCircleIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Profile
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <Cog6ToothIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Settings
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <PowerIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Log Out
-        </ListItem>
-      </List> */}
+      </div>
+
     </Card>
+    
     </div>
   )
 }

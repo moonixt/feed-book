@@ -56,6 +56,7 @@ const PostDetails = () => {
             <button className='bcolor' onClick={Back}>Voltar</button>
         </div>
           <h1 className='text-4xl pb-10 '>{publication.text}</h1>
+          <h1 className='text-4xl pb-10 '>{publication.title}</h1>
           <img className='pb-4' src={`http://127.0.0.1:8000/${publication.artwork}`} alt={publication.title} style={{ display: 'block', margin: '0 auto' }} />
          
          
