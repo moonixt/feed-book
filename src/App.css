@@ -108,13 +108,20 @@
   transition: all .20s ease-in-out;
 }
 
+
+
+
 .bcomment{
-  background-color: #a2512f;
-  color: #f2f6fe;
-  padding: 10px 10px 10px 10px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff;
+  padding: 10px 10px 10px 10px; 
+  border-bottom: 2px solid #1b1b1b;
+   
   transition: all .20s ease-in-out;
 }
+
 
 /* .bcolortitle{
   background-color: #122dc781;
