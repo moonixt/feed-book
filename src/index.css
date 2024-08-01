@@ -6,7 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #241d2a;
-  background-image: url(../public/testbg.jpg);
+  /* background-image: url(../public/testbg.jpg); */
   position: absolute;
   top: 0;
   right: 0;
