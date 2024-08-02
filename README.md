@@ -1,7 +1,7 @@
 
 
 
-# FeedBook em Electron.
+# Feedbook em Electron.
 
 A intenção deste projeto é a criação de uma rede social.
 
