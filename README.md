@@ -1,33 +1,27 @@
 
 
 
-# React + TypeScript + Vite
+# FeedBook em Electron.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A intenção deste projeto é a criação de uma rede social.
 
-Currently, two official plugins are available:
+Backend do projeto: https://github.com/moonixt/backend-feed-book
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image_2024-08-01_21-29-49](https://github.com/user-attachments/assets/cdc42b02-46b3-4771-af2b-7182949f2343)
 
-## Expanding the ESLint configuration
+## Instalação
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Dependencias necessárias:
 
-- Configure the top-level `parserOptions` property like this:
+https://nodejs.org/pt
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Passo a passo:
+Abra o projeto em uma pasta na sua IDE de preferência, após isso, abra o terminal e digite:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+>npm install
+
+O projeto baixará todas as dependencias que estão sendo utilizadas até o momento. Após o término da instalação, o projeto já estará pronto para abrir com o seguinte comando:
+
+>npm run dev
+
+Para dúvidas ou problemas por favor entre em contato.
