@@ -56,7 +56,7 @@
 }
 
 .pub {
-  background-color: #151515;
+  background-color: #ffffff;
 }
 
 .sidecolor{
@@ -67,10 +67,10 @@
 
 .sidehover:hover{
   border-radius: 5px;
-  background-color: #1f6feb;
+  background-color: #9aa5b7;
   padding: 15px 0px 15px 0px;
 
-  transition: all .20s ease-in-out;
+  transition: all .40s ease-in-out;
 
 
 }
@@ -84,9 +84,9 @@
 }
 
 .cover{
-  border: solid black;
   padding: 200px 200px 200px 200px;
-  background-color: #151515;
+  border-radius: 80px;
+  background-color: #ffffff;
   
 }
 
@@ -101,8 +101,8 @@
 
 
 .bcolor_react{
-  color: #f2f6fe;
-  background-color: #000000d6;
+  color: #000000;
+  background-color: #EBEDF0;
   padding: 10px 10px 10px 10px;
   border-radius: 100px;
   transition: all .20s ease-in-out;
@@ -115,11 +115,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  color: #ffffff;
+  color: #000000;
   padding: 10px 10px 10px 10px; 
   border-bottom: 2px solid #1b1b1b;
    
   transition: all .20s ease-in-out;
+}
+
+.commentcolor{
+  background-color:  #f4f6fa;
+  
 }
 
 

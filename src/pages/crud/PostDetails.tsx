@@ -84,8 +84,8 @@ const PostDetails = () => {
         <div key={publication.id} className='space-y-3 pt-20'>
 
         <div className='card pub shadow-x'> 
-        <h1 className="pt-5 pb-3 text-white text-start	font-bold text-5xl">{publication.title}</h1>
-        <p className="pt-5 pb-3 text-white text-start	text-3xl">{publication.text}</p>
+        <h1 className="pt-5 pb-3 text-black text-start	font-bold text-5xl">{publication.title}</h1>
+        <p className="pt-5 pb-3 text-black text-start	text-3xl">{publication.text}</p>
           <img className='pb-2 rounded-2xl img justify-start' src={`http://127.0.0.1:8000/${publication.artwork}`} alt={publication.title} style={{ display: 'block', margin: '0 auto' }} />
           {/* <div className="justify-start flex space-x-10 pt-3 pb-3">
           <h1 className="bcolor_react"><CiHeart /></h1>
@@ -98,7 +98,7 @@ const PostDetails = () => {
           <form onSubmit={handleSubmit}>
         <textarea
       placeholder="Adicione um comentário"
-      className="textarea textarea-bordered textarea-lg  "
+      className="commentcolor textarea-bordered textarea-lg  "
      name="comment_text"
      rows={1} 
      cols={100}

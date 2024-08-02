@@ -34,28 +34,28 @@ const Implemetation = () => {
     <div>
       <div id="Teste Sidebar"></div>
 
-      <div className="pt-10">
+      <div className="pt-14">
         <h1 className="font-bold text-8xl bcolortitle">Feed</h1>
       </div>
-      <div className="pt-10">
+      {/* <div className="pt-10">
         <button className="bcolor" onClick={Foward}>
           Próxima
         </button>
-      </div>
+      </div> */}
       <div id="Leitura" className="page">
         {[...publications].reverse().map((publication) => (
           <div key={publication.id} className="space-y-3 pt-10 ">
             <div className="card pub shadow-xl ">
               <Link to={"/post"}>
                 {" "}
-                <p className="justify-end bcolor flex text-3xl">
+                <p className="justify-end text-black flex text-3xl">
                   <BsThreeDotsVertical />{" "}
                 </p>{" "}
               </Link>
-              <h1 className="pt-5 pb-3 text-white text-start	font-bold text-5xl">
+              <h1 className="pt-5 pb-3 text-black text-start	font-bold text-5xl">
                 {publication.title}
               </h1>
-              <p className="pt-5 pb-3 text-white text-start	text-3xl">
+              <p className="pt-5 pb-3 text-black text-start	text-3xl">
                 {publication.text}
               </p>
               <figure>
@@ -72,7 +72,7 @@ const Implemetation = () => {
                 <p className="justify-left flex text-1xl">
               Clique no botão para ser redirecionado.
             </p> */}
-                <p className="justify-end flex">
+                <p className="justify-end flex ">
                   {publication.publication_date}/{publication.id}
                 </p>
 
@@ -91,7 +91,7 @@ const Implemetation = () => {
                   {" "}
                   <textarea
                     placeholder="Adicione um comentário"
-                    className="textarea textarea-bordered textarea-lg  "
+                    className="commentcolor textarea-bordered textarea-lg "
                     name="new comment"
                     rows={1}
                     cols={100}

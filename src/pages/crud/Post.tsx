@@ -81,7 +81,7 @@ const Post = () => {
     
     <textarea
     placeholder="Titulo"
-    className="textarea textarea-bordered textarea-lg  "
+    className="commentcolor textarea-bordered textarea-lg  "
     value={title}
      name="title"
      rows={1} 
@@ -98,7 +98,7 @@ const Post = () => {
     
   <textarea
   placeholder="O que tem em mente?"
-  className="textarea textarea-bordered textarea-lg  "
+  className="commentcolor textarea-bordered textarea-lg  "
   value={text}
    name="text"
    rows={5} 
@@ -164,7 +164,7 @@ const Post = () => {
   <label className=" flex items-center gap-2 mb-4">
   <textarea
   placeholder="Insira o ID da publicação para remover."
-  className="textarea textarea-error textarea-lg  "
+  className="commentcolor textarea-error textarea-lg  "
   value={id}
    name="text"
    rows={1} 

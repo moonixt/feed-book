@@ -61,9 +61,9 @@ import {
         <div>
         <h1 className='text-white sidehover font-bold' onClick={Posts}>Postagens</h1>
         </div>
-        <div>
+        {/* <div>
         <h1 className='text-white sidehover font-bold' onClick={Tests}>Teste API</h1>
-        </div>
+        </div> */}
         <div>
         <h1 className='text-white sidehover font-bold' onClick={Publish}>Publicar</h1>
         </div>
