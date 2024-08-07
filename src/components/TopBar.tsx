@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TopBar = () => {
   return (
@@ -10,15 +11,16 @@ const TopBar = () => {
   <div className="navbar-center">
     <h1 className="">Feedbook</h1>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end pr-10">
     <div>
+     <Link to={'/login'} ><h2 className='text-4xl text-white'>Login</h2></Link>
     </div>
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost  avatar">
         <div className="w-14 rounded-full">
           <img
             alt="Tailwind CSS Navbar component"
-            src="https://media1.tenor.com/m/5x1_L18QtucAAAAC/silly-cat.gif" />
+            src="./public/nuser.png" />
         </div>
       </div>
       <ul

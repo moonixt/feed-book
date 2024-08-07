@@ -75,6 +75,21 @@ import {
       </div>
 
     </Card>
+
+    {/* <div>
+    <Card className="fixed right-0 top-24  xl:block lg:hidden md:hidden sm:block hidden h-full   p-4  ">
+      <div className="mb-2 p-4">
+        <div className="space-y-6 ">
+        <div>
+        <h1 className='text-black font-bold'>Contatos</h1>
+        </div>
+       
+        </div>
+        
+      </div>
+
+    </Card>
+    </div> */}
     
     </div>
   )

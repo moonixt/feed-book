@@ -18,6 +18,7 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -101,6 +102,14 @@
 
 
 .bcolor_react{
+  color: #000000;
+  background-color: #EBEDF0;
+  padding: 10px 10px 10px 10px;
+  border-radius: 100px;
+  transition: all .20s ease-in-out;
+}
+
+.bcolor_react_heart{
   color: #000000;
   background-color: #EBEDF0;
   padding: 10px 10px 10px 10px;

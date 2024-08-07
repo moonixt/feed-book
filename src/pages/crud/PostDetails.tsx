@@ -119,7 +119,7 @@ const PostDetails = () => {
       {comment.map((comment) => (
         <div key={comment.id} className='pt-10 gap-5 '>
           <div className='text-7xl flex'>
-            <img src='../public/gg1.gif' style={{width:100,height:100}}></img>
+            <img src='../public/nuser.png' style={{width:100,height:100, borderRadius:100}}></img>
           </div>
           <p className="justify-end flex">{comment.comments_date}/{publication.id}</p>
           <h1 className='text-4xl pb-10 bcomment' >{comment.comment_text}</h1>

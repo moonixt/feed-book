@@ -21,7 +21,8 @@ const Implemetation = () => {
       } catch (error) {
         console.error("Server may not connected:", error);
       }
-    };
+    }
+    
     fetchPublication();
   }, []);
 
