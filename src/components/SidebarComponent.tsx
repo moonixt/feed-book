@@ -17,6 +17,8 @@ import {
   InboxIcon,
   PowerIcon,
 } from "@heroicons/react/24/solid";
+import { useContext } from "react";
+import  AuthContext  from "../context/Authcontext";
 
 
 
@@ -24,7 +26,6 @@ import {
 
   const NavigateHome = useNavigate();
   const NavigatePosts = useNavigate();
-  const NavigateTest = useNavigate();
 
   const Home = () => {
     NavigateHome('/')
@@ -34,9 +35,7 @@ import {
     NavigateHome('/project')
   }
 
-  const Tests = () => {
-    NavigateHome('/test')
-  }
+  const {loginUser} =useContext(AuthContext)
 
   const Publish = () => {
     NavigateHome('/post')
@@ -61,9 +60,9 @@ import {
         <div>
         <h1 className='text-white sidehover font-bold' onClick={Posts}>Postagens</h1>
         </div>
-        {/* <div>
-        <h1 className='text-white sidehover font-bold' onClick={Tests}>Teste API</h1>
-        </div> */}
+        <div>
+        <h1 className='text-white sidehover font-bold' onClick={loginUser}>Teste API</h1>
+        </div>
         <div>
         <h1 className='text-white sidehover font-bold' onClick={Publish}>Publicar</h1>
         </div>

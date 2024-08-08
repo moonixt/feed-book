@@ -1,8 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import  AuthContext  from "../context/Authcontext";
 
-function Loginpage() {
+
+const Loginpage = () => {
+
+const {loginUser} = useContext(AuthContext)
+
   return (
+    
     <div>
         <div>
             <div>
@@ -10,7 +17,7 @@ function Loginpage() {
             Fazer login
           </h1>
           <h2 className="pb-3">Como deseja continuar?</h2>
-          <form  className="space-y-4">
+          <form  className="space-y-4" onSubmit={loginUser}>
             <label className=" input-bordered flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
