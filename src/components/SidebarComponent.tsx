@@ -18,7 +18,8 @@ import {
   PowerIcon,
 } from "@heroicons/react/24/solid";
 import { useContext } from "react";
-import  AuthContext  from "../context/Authcontext";
+import AuthContext, { AuthContextType } from "../context/Authcontext"; // Certifique-se de importar o tipo AuthContextType
+
 
 
 
@@ -35,7 +36,7 @@ import  AuthContext  from "../context/Authcontext";
     NavigateHome('/project')
   }
 
-  const {loginUser} =useContext(AuthContext)
+  const {loginUser} =useContext(AuthContext) as AuthContextType;
 
   const Publish = () => {
     NavigateHome('/post')
@@ -48,6 +49,7 @@ import  AuthContext  from "../context/Authcontext";
     
 
     <div>
+      {/* Consertar a tipagem do card */}
       <Card className="fixed left-0 top-0 sidecolor xl:block lg:hidden md:hidden sm:block hidden h-full   p-4  ">
       <div className="mb-2 p-4">
         <div className="space-y-6 ">

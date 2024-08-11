@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react';
-import  AuthContext  from "../context/Authcontext";
+import  AuthContext, {AuthContextType}  from "../context/Authcontext";
 
 
 const Loginpage = () => {
 
-const {loginUser} = useContext(AuthContext)
+  const {loginUser} =useContext(AuthContext) as AuthContextType;
 
   return (
     

@@ -1,24 +1,57 @@
 // Importa funções e hooks necessários do React e outras bibliotecas
-import { createContext, useState, useEffect } from "react";
-import { jwtDecode } from "jwt-decode"; // Função para decodificar tokens JWT
+import {
+  createContext,
+  useState,
+  useEffect,
+  ReactNode,
+  FormEvent,
+} from "react";
+import { jwtDecode} from "jwt-decode"; // Função para decodificar tokens JWT
 import { useNavigate } from "react-router-dom"; // Hook para navegação de roteamento
 
+// Define a tipagem para os tokens de autenticação
+type AuthTokens = {
+  accessToken: string;
+  refreshToken: string;
+} | null;
+
+// Define a tipagem para o contexto de autenticação
+export interface AuthContextType {
+  authTokens: AuthTokens | null;
+  setAuthTokens: React.Dispatch<React.SetStateAction<AuthTokens | null>>;
+  // user: JwtPayload | null;
+  loginUser: (e: FormEvent<LoginFormElement>) => Promise<void>;
+  logoutUser: () => void;
+}
+
+interface LoginFormElements extends HTMLFormControlsCollection {
+  email: HTMLInputElement;
+  password: HTMLInputElement;
+}
+
+interface LoginFormElement extends HTMLFormElement {
+  elements: LoginFormElements;
+}
+
 // Cria um contexto de autenticação com valor inicial indefinido
-const AuthContext = createContext();
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Define o provedor de contexto de autenticação
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   // Estado para armazenar tokens de autenticação
-  let [authTokens, setAuthTokens] = useState(() =>
-    localStorage.getItem("authTokens")
-      ? JSON.parse(localStorage.getItem("authTokens"))
-      : null
-  );
+  let [authTokens, setAuthTokens] = useState<AuthTokens | null>(null);
+  // const [user, setUser] = useState<JwtPayload | null>(null);
+
+    
+  //   localStorage.getItem("authTokens")
+  //     ? JSON.parse(localStorage.getItem("authTokens") as string)
+  //     : null
+  // );
 
   // Estado para armazenar informações do usuário decodificadas do token
   let [user, setUser] = useState(() =>
     localStorage.getItem("authTokens")
-      ? jwtDecode(localStorage.getItem("authTokens"))
+      ? jwtDecode(localStorage.getItem("authTokens") as string)
       : null
   );
 
@@ -29,7 +62,7 @@ export const AuthProvider = ({ children }) => {
   const history = useNavigate();
 
   // Função para autenticar o usuário
-  let loginUser = async (e) => {
+  let loginUser = async (e: FormEvent<LoginFormElement>) => {
     e.preventDefault(); // Previne o comportamento padrão do formulário
 
     // Faz uma requisição POST para o endpoint de login
@@ -39,8 +72,8 @@ export const AuthProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: e.target.email.value,
-        password: e.target.password.value,
+        email: e.currentTarget.elements.email.value,
+        password: e.currentTarget.elements.password.value,
       }),
     });
 
@@ -65,21 +98,25 @@ export const AuthProvider = ({ children }) => {
     setAuthTokens(null); // Limpa os tokens de autenticação
     setUser(null); // Limpa os dados do usuário
     localStorage.removeItem("authTokens"); // Remove os tokens do localStorage
-    window.alert('Você foi desconectado'); // Exibe um alerta de desconexão
+    window.alert("Você foi desconectado"); // Exibe um alerta de desconexão
     history("/login"); // Redireciona para a página de login
   };
 
   // Função para atualizar o token de autenticação
   let updateToken = async () => {
     console.log("Token atualizado!");
-
+    if (!authTokens) {
+      console.error("Os tokens de autenticação não estão disponíveis.");
+      return;
+    }  
     // Faz uma requisição POST para atualizar o token
     let response = await fetch("http://127.0.0.1:8000/token/refresh/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ refresh: authTokens.refresh }),
+      
+      body: JSON.stringify({ refresh: authTokens.refreshToken }),
     });
 
     // Converte a resposta da requisição para JSON
@@ -101,9 +138,11 @@ export const AuthProvider = ({ children }) => {
 
   // Dados que serão disponibilizados pelo contexto
   let ContextData = {
-    user: user,
-    loginUser: loginUser,
-    logoutUser: logoutUser,
+    authTokens,
+    setAuthTokens,
+    user,
+    loginUser,
+    logoutUser,
   };
 
   // Efeito para atualizar o token periodicamente
@@ -121,9 +160,7 @@ export const AuthProvider = ({ children }) => {
 
   // Fornece o contexto com os dados e funções de autenticação para os componentes filhos
   return (
-    <AuthContext.Provider value={ContextData}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={ContextData}>{children}</AuthContext.Provider>
   );
 };
 
