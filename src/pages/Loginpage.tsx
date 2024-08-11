@@ -1,23 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useContext } from 'react';
-import  AuthContext, {AuthContextType}  from "../context/Authcontext";
-
+import React from "react";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext, { AuthContextType } from "../context/Authcontext";
 
 const Loginpage = () => {
-
-  const {loginUser} =useContext(AuthContext) as AuthContextType;
+  const { loginUser } = useContext(AuthContext) as AuthContextType;
 
   return (
-    
     <div>
+      <div>
         <div>
-            <div>
-        <h1 className="font-bold pb-5">
-            Fazer login
-          </h1>
+          <h1 className="font-bold pb-5">Fazer login</h1>
           <h2 className="pb-3">Como deseja continuar?</h2>
-          <form  className="space-y-4" onSubmit={loginUser}>
+          <form className="space-y-4" onSubmit={loginUser}>
             <label className=" input-bordered flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,25 +50,22 @@ const Loginpage = () => {
                 placeholder="●●●●●"
                 name="password"
               />
-              
             </label>
             <input
               className="m-2 rounded bg-cyan-950 px-10 py-2  text-black"
               type="submit"
               value="Entrar"
             />
-            
-            
           </form>
-          <Link to={'/register'}><button className="m-2 rounded  px-10 py-2 text-white">
+          <Link to={"/register"}>
+            <button className="m-2 rounded  px-10 py-2 text-white">
               Criar uma conta
-            </button></Link>
-          
-          
-        </div> 
+            </button>
+          </Link>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Loginpage
+export default Loginpage;

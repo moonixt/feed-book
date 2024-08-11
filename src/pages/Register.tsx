@@ -1,55 +1,37 @@
-import React, {FormEvent} from 'react'
-import { useState } from 'react'
-import axios from 'axios'
-
+// import React, { FormEvent } from "react";
+import { useState } from "react";
+import axios from "axios";
 
 const Register = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-
-  
-  const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
-
-
-  
-
-  const handleSubmit = async (event:FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
-    let formfield = new FormData
 
-    formfield.append('name', username)
-    formfield.append('email', email)
-    formfield.append('password', password)
+    let formfield = new FormData();
 
-try {
-    await axios.post('http://localhost:8000/create_user/', formfield)
-    alert('Conta Registrado')
-} catch (error) {
-    alert('Não foi possível realizar a ação',error);
-}
-    
-  }
+    formfield.append("name", username);
+    formfield.append("email", email);
+    formfield.append("password", password);
 
-
-
-
-
+    try {
+      await axios.post("http://localhost:8000/create_user/", formfield);
+      alert("Conta Registrado");
+    } catch (error) {
+      alert("Não foi possível realizar a ação", error);
+    }
+  };
 
   return (
     <div>
-       <div>
-            <div>
-        <h1 className="font-bold pb-5">
-            Cadastrar
-          </h1>
+      <div>
+        <div>
+          <h1 className="font-bold pb-5">Cadastrar</h1>
           <h2 className="pb-3">Como deseja continuar?</h2>
-          <form  className="space-y-4" onSubmit={handleSubmit}>
-
-          <label className=" input-bordered flex items-center gap-2">
-             
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <label className=" input-bordered flex items-center gap-2">
               <input
                 type="text"
                 className="grow"
@@ -101,23 +83,17 @@ try {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              
             </label>
             <input
               className="m-2 rounded bg-cyan-950 px-10 py-2  text-black"
               type="submit"
               value="Cadastrar"
             />
-            
-            
           </form>
-          
-          
-          
-        </div> 
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
