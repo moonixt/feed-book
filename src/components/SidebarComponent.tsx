@@ -22,7 +22,6 @@ import AuthContext, { AuthContextType } from "../context/Authcontext"; // Certif
 
 const SidebarComponent = () => {
   const NavigateHome = useNavigate();
-  const NavigatePosts = useNavigate();
 
   const Home = () => {
     NavigateHome("/");
@@ -36,6 +35,10 @@ const SidebarComponent = () => {
 
   const Publish = () => {
     NavigateHome("/post");
+  };
+
+  const Profile = () => {
+    NavigateHome("/profile");
   };
 
   return (
@@ -60,7 +63,7 @@ const SidebarComponent = () => {
             <div>
               <h1
                 className="text-white sidehover font-bold"
-                onClick={loginUser}
+                onClick={Publish}
               >
                 Teste API
               </h1>
@@ -70,17 +73,22 @@ const SidebarComponent = () => {
                 Publicar
               </h1>
             </div>
-            <div></div>
+            <div>
+            <h1 className="text-white sidehover font-bold" onClick={Profile}>
+                Perfil
+              </h1>
+
+            </div>
           </div>
         </div>
       </Card>
 
-      {/* <div>
+      <div>
     <Card className="fixed right-0 top-24  xl:block lg:hidden md:hidden sm:block hidden h-full   p-4  ">
       <div className="mb-2 p-4">
         <div className="space-y-6 ">
         <div>
-        <h1 className='text-black font-bold'>Contatos</h1>
+        <h1 className='text-black border-b-4 border-black'>Feed-friends</h1>
         </div>
        
         </div>
@@ -88,7 +96,7 @@ const SidebarComponent = () => {
       </div>
 
     </Card>
-    </div> */}
+    </div>
     </div>
   );
 };

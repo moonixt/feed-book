@@ -52,6 +52,10 @@ const Implemetation = () => {
                 <p className="justify-end text-black flex text-3xl">
                   <BsThreeDotsVertical />{" "}
                 </p>{" "}
+                <h1 className="pt-5 pb-3 text-black text-start text-3xl">
+                Publicado por: {publication.poster}
+              </h1>
+              
               </Link>
               <h1 className="pt-5 pb-3 text-black text-start	font-bold text-5xl">
                 {publication.title}
@@ -64,6 +68,8 @@ const Implemetation = () => {
                   className="pb-2 rounded-2xl img justify-start"
                   src={publication.artwork}
                   alt={publication.title}
+                  // style={{width: '736px', height:'736px' }}
+                  
                 />
               </figure>
               <div className="card-body">
@@ -87,7 +93,7 @@ const Implemetation = () => {
                     </h1>
                   </Link>
                 </div>
-                <div className="card-actions justify-end"></div>
+                <div className="card-actions justify-end pb-5"></div>
                 <Link to={`/post-details/${publication.id}`}>
                   {" "}
                   <textarea

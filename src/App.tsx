@@ -10,6 +10,7 @@ import TopBar from "./components/TopBar";
 import Loginpage from "./pages/Loginpage";
 import Register from "./pages/Register";
 import { AuthProvider } from "./context/Authcontext";
+import Profile from "./pages/user/Profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/post" element={<Post />} />
         <Route path="/post-details/:id" element={<PostDetails />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
      
       <TopBar />

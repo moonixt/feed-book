@@ -2,10 +2,11 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.7;
   font-weight: 400;
-
+  zoom: 65%;
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
   background-color: #EBEDF0;
+
   /* background-image: url(../public/testbg.jpg); */
   position: absolute;
   top: 0;

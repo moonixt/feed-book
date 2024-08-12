@@ -40,6 +40,9 @@ function createWindow() {
   // Test active push message to Renderer-process.
   win.webContents.on('did-finish-load', () => {
     win?.webContents.send('main-process-message', (new Date).toLocaleString())
+    // Define o fator de zoom default (1.0 = 100%)
+    // win.webContents.setZoomFactor(0.65); // 125% de zoom
+
   })
 
   if (VITE_DEV_SERVER_URL) {
