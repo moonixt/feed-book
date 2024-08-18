@@ -172,6 +172,19 @@
   top: -15px;
 }
 
+
+.imgf{
+  position: relative;
+  left: 0;
+  transition: all .20s ease-in-out;
+}
+
+.imgf:hover{
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  border-radius: 20px;
+  left: -50px;
+}
+
 .titlecolor{
   display:flex;
   justify-content: center;

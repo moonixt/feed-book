@@ -36,7 +36,7 @@ const Implemetation = () => {
       <div id="Teste Sidebar"></div>
 
       <div className="pt-14">
-        <h1 className="font-bold text-8xl bcolortitle">Feed</h1>
+        {/* <h1 className="font-bold text-8xl bcolortitle">instafeed</h1> */}
       </div>
       {/* <div className="pt-10">
         <button className="bcolor" onClick={Foward}>

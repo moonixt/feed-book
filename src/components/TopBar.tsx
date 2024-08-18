@@ -9,7 +9,7 @@ const TopBar = () => {
   <div className="navbar-start">
   </div>
   <div className="navbar-center">
-    <h1 className="">Feedbook</h1>
+    <h1 className="font-bold"> instafeed</h1>
   </div>
   <div className="navbar-end pr-10">
     <div>
