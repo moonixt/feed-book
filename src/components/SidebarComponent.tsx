@@ -104,8 +104,8 @@ const SidebarComponent = () => {
           <div className="mb-2 p-4">
             <div className="space-y-6 ">
               <div>
-                <h1 className="text-black border-b-4 border-black">
-                  Feed-users
+                <h1 className="text-black border-b-4 border-black text-2xl font-bold">
+                Sugestões para seguir
                 </h1>
                 <div id="get" className="pt-5 space-y-5  text-3xl">
                   {[...contacts].reverse().map((contact) => (

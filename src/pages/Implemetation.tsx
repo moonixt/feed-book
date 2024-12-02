@@ -53,7 +53,7 @@ const Implemetation = () => {
                   <BsThreeDotsVertical />{" "}
                 </p>{" "}
                 <h1 className="pt-5 pb-3 text-black text-start text-3xl">
-                Publicado por: {publication.poster}
+                Publicado por: {publication.poster_email}
               </h1>
               
               </Link>
@@ -67,7 +67,7 @@ const Implemetation = () => {
                 <img
                   className="pb-2 rounded-2xl img justify-start"
                   src={publication.artwork}
-                  alt={publication.title}
+                  
                   // style={{width: '736px', height:'736px' }}
                   
                 />
