@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { CiHeart } from "react-icons/ci";
+// import { CiHeart } from "react-icons/ci";
 
 const PostDetails = () => {
   const { id } = useParams();
@@ -9,7 +9,7 @@ const PostDetails = () => {
   const [publication, setPublication] = useState([]);
   const [comment, setComment] = useState([]);
   const [comment_text, setComment_text] = useState("");
-  const [postId, setPostId] = useState(null);
+  const [postId, setPostId] = useState<string>();
 
   useEffect(() => {
     const fetchProdutos = async () => {
@@ -41,7 +41,7 @@ const PostDetails = () => {
     fetchComments();
   }, []);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event:any) => {
     event.preventDefault();
     let formfield = new FormData();
     formfield.append("pub", postId);
