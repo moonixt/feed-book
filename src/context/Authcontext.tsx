@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   );
 
   // Estado para indicar se a autenticação está carregando
-  let [loading, setLoading] = useState(true);
+  let [loading, ] = useState(true);
 
   // Função para navegação programática
   const history = useNavigate();

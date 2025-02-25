@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Post = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [artwork, setArtwork] = useState(null);
-  const [users, setUsers] = useState([]);
+  const [artwork, setArtwork] = useState<File> ({} as File);
+  // const [users, setUsers] = useState([]);
   const [id, setId] = useState('');
 
   const navigateBack = useNavigate();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event:any) => {
     event.preventDefault();
     let formfield = new FormData();
 
@@ -36,7 +36,7 @@ const Post = () => {
       await axios.post('http://127.0.0.1:8000/publication/', formfield);
       alert('Postado');
     } catch (error) {
-      alert('Preencha os campos obrigatórios', error);
+      alert('Preencha os campos obrigatórios' );
     }
   };
 
@@ -45,7 +45,7 @@ const Post = () => {
       await axios.delete(`http://127.0.0.1:8000/publication/${id}/`);
       alert('Postagem excluída');
     } catch (error) {
-      alert('Erro ao excluir postagem', error);
+      alert('Erro ao excluir postagem');
     }
   };
 
